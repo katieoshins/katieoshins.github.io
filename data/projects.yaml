@@ -7,14 +7,14 @@ items:
         url: "https://osf.io/preprints/psyarxiv/52w7j_v1"
 
   - title: "How does unexpected social feedback shape behavior?"
-    summary: "Using An fMRI study examining how adolescents' neural responses to unexpected social feedback relate to subsequent social learning and memory, and how these patterns shift across development."
+    summary: "We investigate age-related differences in the neural correlates of social prediction errors, and how these neural responses relate to subsequent learning and memory."
     image: "/images/projects/soca_mri.jpg"
     links:
       - label: "poster"
         url: "https://drive.google.com/file/d/1RlNFq0AKFxY4tE0ii0VEterq_jA31PkZ/view?usp=sharing"
 
   - title: "How do daily emotional patterns shape adolescent mental health?"
-    summary: "Using ecological momentary assessment and multilevel vector-autoregressive models to characterize how daily emotional dynamics unfold and predict internalizing symptoms across adolescence."
+    summary: "We examine how emotions fluctuate, persist, and influence one another in daily life, and how these patterns relate to internalizing sympyoms in adolescence."
     image: "/images/projects/affect_dynamics.jpg"
     links:
       - label: "poster"
