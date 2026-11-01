@@ -1,0 +1,59 @@
+baseURL = 'https://katieoshins.github.io/'
+defaultContentLanguage = 'en-us'
+title = 'Katie Oshins'
+theme = 'celadon'
+enableRobotsTXT = true
+
+[params]
+  description = "Research Coordinator & Study Lead in the Social Development and Wellbeing Lab at Northeastern. I study learning, decision-making, and affect across adolescent development."
+  email = 'k.oshins@northeastern.edu'
+  location = 'Boston, MA'
+
+[params.homepage]
+  sections = ["hero", "projects", "publications"]
+
+  [params.homepage.hero]
+    enable = true
+    layout = "hero"
+    title = "about"
+
+  [params.homepage.projects]
+    enable = true
+    layout = "cards"
+    title = "Projects"
+    limit = 6
+
+  [params.homepage.publications]
+    enable = true
+    layout = "news"
+    title = "Publications"
+    limit = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        enableInShortcodes = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [
+            ["\\[", "\\]"],
+            ["$$", "$$"]
+          ]
+          inline = [
+            ["\\(", "\\)"],
+            ["$", "$"]
+          ]
+  [markup.highlight]
+    style = "friendly"
+    noClasses = false
+    lineNos = true
+    guessSyntax = true
+
+[[cascade]]
+  layout = "single"
+  [cascade.target]
+    path = "/**"
+    kind = "page"

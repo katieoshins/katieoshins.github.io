@@ -1,0 +1,47 @@
+{{ $profile := site.Data.profile }}
+<header class="hero section-block">
+  {{ $profileImage := strings.TrimPrefix "/" $profile.profile_image }}
+  <div class="hero-media">
+    <img src="{{ $profileImage | relURL }}" alt="{{ $profile.name }} portrait" loading="lazy">
+  </div>
+  <div id="{{ or .Section `hero` }}" class="hero-copy">
+    {{ $name := partial "utils/enrich-text.html" $profile.name | markdownify }}
+    <h1>{{ $name | safeHTML }}</h1>
+    <p class="meta">
+      {{ partial "utils/enrich-text.html" $profile.title | markdownify | safeHTML }}
+      {{ with $profile.affiliation }}
+        <br><span class="meta-affiliation">{{ partial "utils/enrich-text.html" . | markdownify | safeHTML }}</span>
+      {{ end }}
+    </p>
+    <div class="summary">{{ partial "utils/enrich-text.html" $profile.summary | markdownify | safeHTML }}</div>
+    {{ with $profile.highlights_title }}
+      <div class="highlights-title">{{ . }}</div>
+    {{ end }}
+    <ul class="highlight-list">
+      {{ range $profile.highlights }}
+        <li>{{ partial "utils/enrich-text.html" . | markdownify | safeHTML }}</li>
+      {{ end }}
+    </ul>
+    <div class="hero-links">
+      {{ range $profile.links }}
+        {{ $link := or .link .url }}
+        {{ $labelLower := lower .label }}
+        {{ $icon := "" }}
+        {{ if in $labelLower "email" }}
+          {{ $icon = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"></rect><path d=\"M3 7l9 6 9-6\"></path></svg>" }}
+        {{ else if in $labelLower "scholar" }}
+          {{ $icon = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 9l10-5 10 5-10 5-10-5z\"></path><path d=\"M6 11v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5\"></path></svg>" }}
+        {{ else if in $labelLower "linkedin" }}
+          {{ $icon = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"></rect><line x1=\"7.5\" y1=\"10\" x2=\"7.5\" y2=\"17\"></line><circle cx=\"7.5\" cy=\"6.8\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"></circle><path d=\"M11.5 17v-4.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V17\"></path></svg>" }}
+        {{ else if in $labelLower "bluesky" }}
+          {{ $icon = printf "<img src=\"%s\" alt=\"\" class=\"icon-img\">" ("images/bluesky.png" | relURL) }}
+        {{ end }}
+        {{ if and (hasPrefix $link "/") (not (hasPrefix $link "//")) }}
+          <a href="{{ $link | relURL }}" class="text-link">{{ $icon | safeHTML }}<span>{{ .label }}</span></a>
+        {{ else }}
+          <a href="{{ $link | safeURL }}" class="text-link" target="_blank" rel="noopener">{{ $icon | safeHTML }}<span>{{ .label }}</span></a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</header>

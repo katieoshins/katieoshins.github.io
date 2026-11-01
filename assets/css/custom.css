@@ -1,0 +1,426 @@
+/* ---------------------------
+   make original theme simpler
+   --------------------------- */
+
+/* custom font theme */
+:root {
+  --font-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-label: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body,
+.summary,
+.highlight-list,
+.news-detail p,
+.card-summary,
+.card-meta,
+.card-coauthors,
+.markdown-body,
+.markdown-body p,
+.site-footer,
+.reader-status,
+.article-date,
+.listing-card p {
+  font-family: var(--font-sans) !important;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.summary,
+.news-detail p,
+.card-summary {
+  line-height: 1.6;
+}
+
+/* Light theme */
+:root {
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F1F1EF;
+  --color-text: #141414;
+  --color-primary: #2F5DFF; /* pop #1 — links / underlines */
+  --color-secondary: #6E6E6E; /* neutral gray, no color */
+  --color-highlight: #E8743A; /* pop #2 — accents */
+  --color-highlight-soft: rgba(232, 116, 58, 0.12);
+  --color-muted: rgba(20, 20, 20, 0.6);
+  --shadow-soft: none;
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-surface: #121212;
+  --color-surface-muted: #1E1E1E;
+  --color-text: #F2F2F0;
+  --color-primary: #7C97FF; /* pop #1 */
+  --color-secondary: #9A9A9A;
+  --color-highlight: #F2995A; /* pop #2 */
+  --color-highlight-soft: rgba(242, 153, 90, 0.16);
+  --color-muted: rgba(242, 242, 240, 0.65);
+  --shadow-soft: none;
+}
+
+.page-shell {
+  padding-top: 1.5rem;
+}
+
+/* ---------- top navigation theme ---------- */
+
+.morandi-nav {
+  border-radius: 0;
+  background: var(--color-bg);
+  backdrop-filter: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(--color-surface-muted);
+  padding: 1.1rem 0.25rem;
+}
+
+body[data-theme="dark"] .morandi-nav {
+  background: var(--color-bg);
+}
+
+.brand .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--color-text);
+}
+
+.brand a {
+  color: var(--color-text);
+}
+
+.nav-links a {
+  color: var(--color-text);
+  opacity: 0.6;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a.active {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.theme-toggle {
+  box-shadow: none;
+  border: 1px solid var(--color-surface-muted);
+  background: transparent;
+}
+
+.hero {
+  margin-top: 2.5rem;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  gap: 1.5rem;
+  grid-template-columns: 170px 1fr;
+  align-items: start;
+}
+
+.hero-media img {
+  border-radius: 28px;
+  box-shadow: none;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.hero-copy h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-top: 0;
+}
+
+.hero-copy .meta {
+  font-family: var(--font-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero-copy .meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.hero-copy .meta a:hover,
+.hero-copy .meta a:focus-visible {
+  color: var(--color-primary);
+}
+
+.hero-copy .eyebrow,
+.highlights-title {
+  color: var(--color-secondary);
+}
+
+.hero-links .text-link {
+  color: var(--color-text);
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-links .text-link svg,
+.hero-links .text-link .icon-img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.hero-links .text-link span {
+  white-space: nowrap;
+}
+
+body[data-theme="dark"] .hero-links .icon-img {
+  filter: invert(1);
+}
+
+.hero-links .text-link:hover,
+.hero-links .text-link:focus-visible {
+  color: var(--color-primary);
+}
+
+/* ---------- Keyword emphasis: underline in color, no fill ---------- */
+
+.hero-copy mark,
+.highlight-list mark,
+.news-detail mark,
+.card-summary mark {
+  background: transparent;
+  color: var(--color-highlight);
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.text-accent {
+  color: var(--color-highlight);
+  font-weight: 600;
+}
+
+.summary a,
+.news-detail a,
+.card-summary a,
+.markdown-body a {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.summary a:hover,
+.news-detail a:hover,
+.card-summary a:hover,
+.markdown-body a:hover {
+  color: var(--color-highlight);
+  text-decoration-color: var(--color-highlight);
+}
+
+/* ---------- section headings ---------- */
+
+.section-heading {
+  margin: 4rem 0 1.75rem;
+  gap: 0.65rem;
+}
+
+.section-heading .bar {
+  width: 3px;
+  height: 20px;
+  border-radius: 0;
+  background: var(--color-text);
+  opacity: 0.2;
+}
+
+.section-heading h2 {
+  font-family: var(--font-label);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* ---------- publication list ---------- */
+
+.news-list {
+  gap: 0;
+}
+
+.news-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-surface-muted);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.1rem 0.1rem;
+}
+
+.news-item:first-child {
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+.news-date {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.news-badge {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-surface-muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ghost-toggle {
+  border-radius: 0;
+  color: var(--color-text);
+}
+
+.ghost-toggle:hover,
+.ghost-toggle:focus-visible {
+  background: var(--color-surface-muted);
+}
+
+/* ---------- Project cards: thin border, no shadow, no lift ---------- */
+
+.expandable-card {
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid var(--color-surface-muted);
+  border-radius: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.expandable-card:hover,
+.expandable-card:focus-within {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-text);
+}
+
+/* Question-only cards: summary stays hidden until hover/focus */
+.card-summary {
+  max-height: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease, margin 0.25s ease;
+}
+
+.expandable-card:hover .card-summary,
+.expandable-card:focus-within .card-summary {
+  max-height: 200px;
+  margin-top: 0.5rem;
+  opacity: 1;
+}
+
+.card-image img {
+  border-radius: 0;
+  filter: grayscale(100%) contrast(1.05);
+  aspect-ratio: 2 / 1;
+  transition: filter 0.3s ease;
+}
+
+.expandable-card:hover .card-image img,
+.expandable-card:focus-within .card-image img {
+  filter: none;
+}
+
+.card-image--placeholder {
+  aspect-ratio: 2 / 1;
+  background: var(--color-surface-muted);
+}
+
+.card-meta {
+  color: var(--color-secondary);
+}
+
+.card-content {
+  padding: 1.1rem;
+  gap: 0.4rem;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.expandable-grid {
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .expandable-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card-coauthors,
+.card-coauthors .label {
+  color: var(--color-secondary);
+}
+
+.tag {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-surface-muted);
+}
+
+body[data-theme="dark"] .tag {
+  background: transparent;
+}
+
+.chip-link {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.chip-link:hover,
+.chip-link:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  transform: none;
+}
+
+/* ---------- Scrolling ---------- */
+
+#scroll-top {
+  box-shadow: none;
+  border: 1px solid var(--color-surface-muted);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+#scroll-top:hover,
+#scroll-top:focus-visible {
+  border-color: var(--color-text);
+}
+
+.site-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-surface-muted);
+  padding-top: 1.5rem;
+}
+
+.site-footer a {
+  border-bottom-color: var(--color-surface-muted);
+}
+
+.site-footer a:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+}

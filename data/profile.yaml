@@ -1,0 +1,21 @@
+name: "Katie Oshins"
+title: "Predoctoral Researcher"
+affiliation: ""
+profile_image: "images/profile.png"
+summary: "I study how people integrate information from their external environments and their internal states to guide ==learning== and ==decision making==. How do these processes change across short and long timescales? And how do alterations in these processes confer risk for psychopathology? My research leverages experimental, computational, and neuroimaging methods to investigate these questions. \n\n I graduated from Emory University in 2025, where I conducted research in Dr. Alexandra Cohen's [LUMeN Lab](https://scholarblogs.emory.edu/lumenlab/). I'm currently a research coordinator and study lead in Dr. Alexandra Rodman's [Social Development and Wellbeing Lab](https://www.socialdevlab.com/) at Northeastern University, where I run the ~~Connect Study~~. \n\n Beyond the lab, I hope my research can help bridge the gap between basic science and its real-world applications by advancing our understanding of psychological processes in ways that can inform evidence-based policy and clinical interventions."
+
+#highlights:
+#  - "developmental affective neuroscience"
+#  - "computational psychiatry"
+#  - "learning and decision-making"
+#  - "adolescent mental health"
+links:
+  - label: "email"
+    url: "mailto:k.oshins@northeastern.edu"
+  - label: "google scholar"
+    url: "https://scholar.google.com/citations?user=jB8hHFYAAAAJ&hl=en"
+  - label: "linkedin"
+    url: "https://www.linkedin.com/in/katie-oshins"
+  - label: "bluesky"
+    url: "https://bsky.app/profile/katieoshins.bsky.social"
+

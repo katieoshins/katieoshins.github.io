@@ -1,0 +1,26 @@
+items:
+  - title: "How are positive and negative associations learned and modified across age?"
+    summary: "We found that learned associations peak and are most persistent in late adolescents. This peak paralleled a growing tendency to treat the change in reinforcement as a new situation instead of rewriting what was previously learned."
+    image: "/images/projects/valenced_learning.jpg"
+    links:
+      - label: "preprint"
+        url: "https://osf.io/preprints/psyarxiv/52w7j_v1"
+
+  - title: "How does unexpected social feedback shape behavior?"
+    summary: "Using An fMRI study examining how adolescents' neural responses to unexpected social feedback relate to subsequent social learning and memory, and how these patterns shift across development."
+    image: "/images/projects/soca_mri.jpg"
+    links:
+      - label: "poster"
+        url: "https://drive.google.com/file/d/1RlNFq0AKFxY4tE0ii0VEterq_jA31PkZ/view?usp=sharing"
+
+  - title: "How do daily emotional patterns shape adolescent mental health?"
+    summary: "Using ecological momentary assessment and multilevel vector-autoregressive models to characterize how daily emotional dynamics unfold and predict internalizing symptoms across adolescence."
+    image: "/images/projects/affect_dynamics.jpg"
+    links:
+      - label: "poster"
+        url: "https://drive.google.com/file/d/1YzEosiGKQ2BJWcLpWp74h3Z7FOd9SjY6/view?usp=sharing"
+
+
+  # - title: "How does psychopathology change across adolescence?"
+  #   summary: "Applied a novel matrix-factorization algorithm to five waves of the Adolescent Brain Cognitive Development (ABCD) Study to identify dynamic symptom trajectories of executive function and psychopathology."
+  #   # image: "/images/projects/abcd-factorization.jpg"
