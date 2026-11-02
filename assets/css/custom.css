@@ -179,10 +179,6 @@ body[data-theme="dark"] .morandi-nav {
   white-space: nowrap;
 }
 
-body[data-theme="dark"] .hero-links .icon-img {
-  filter: invert(1);
-}
-
 .hero-links .text-link:hover,
 .hero-links .text-link:focus-visible {
   color: var(--color-primary);
@@ -310,7 +306,7 @@ body[data-theme="dark"] .hero-links .icon-img {
   border-color: var(--color-text);
 }
 
-/* Question-only cards: summary stays hidden until hover/focus */
+/* projects: summary stays hidden until it's hovered over */
 .card-summary {
   max-height: 0;
   margin: 0;
@@ -423,4 +419,17 @@ body[data-theme="dark"] .tag {
 .site-footer a:hover {
   color: var(--color-text);
   border-bottom-color: var(--color-text);
+}
+
+/* ---------- let text wrap for narrow screen ---------- */
+
+@media (max-width: 600px) {
+  .hero {
+    display: flow-root;
+  }
+  .hero-media {
+    float: left;
+    width: 110px;
+    margin: 0.25rem 1rem 0.5rem 0;
+  }
 }
